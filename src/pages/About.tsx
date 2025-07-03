@@ -38,12 +38,7 @@ const About = () => {
                 {t('about', 'story3')}
               </p>
             </div>
-            <div className="bg-gray-200 h-96 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <Users size={64} className="text-green-500 mx-auto mb-4" />
-                <p className="text-gray-600 font-medium">{t('about', 'expertTeam')}</p>
-              </div>
-            </div>
+            <img src="/company.png" alt="Nasz zespół ekspertów" className="h-80 rounded-lg object-cover shadow-lg mx-auto my-8" />
           </div>
         </div>
       </section>

@@ -12,3 +12,4 @@ Allow: /
 
 User-agent: *
 Allow: /
+Sitemap: https://xn--mgkmetallzune-kfb.de/sitemap.xml

@@ -1,0 +1,21 @@
+{
+  "name": "MGK Metall Zäune – Zäune, Tore & Geländer aus Metall",
+  "short_name": "MGK Zäune",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e293b",
+  "theme_color": "#22c55e",
+  "description": "Professionelle Metallzäune, Tore, Pforten, Schiebetore, Doppelflügeltore und Geländer in Deutschland. Individuelle Lösungen, Beratung und Montage.",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

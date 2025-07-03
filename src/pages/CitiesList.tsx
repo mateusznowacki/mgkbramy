@@ -28,9 +28,9 @@ const CitiesList: React.FC = () => {
     de: {
       title: 'Zäune in deutschen Städten - MGK Metall Zäune',
       heroTitle: 'Zäune in deutschen Städten',
-      heroDesc: 'Wir bieten professionelle Metallzäune in ganz Deutschland. Moderne und klassische Zäune, Schiebetore, Doppelflügeltore. Kostenloses Angebot und Montage.',
+      heroDesc: 'Suchen Sie hochwertige Metallzäune in Deutschland? MGK Metall Zäune ist Ihr Experte für moderne und klassische Zäune, Schiebetore, Doppelflügeltore, Pforten, Sichtschutzzäune, französische Balkone, Geländer und Zaunpaneelen in ganz Deutschland. Wir bieten individuelle Beratung, professionelle Planung, Fertigung und Montage direkt vor Ort – für Privatkunden, Unternehmen und Industrie. Verzinkter Stahl, Pulverbeschichtung in RAL-Farben, langlebige Automatisierung (Nice), intelligente Zugangskontrollsysteme und höchste Qualität aus Polen. Profitieren Sie von langjähriger Erfahrung, persönlichem Service und einem kostenlosen Angebot für Ihr Zaunprojekt in jeder deutschen Stadt.',
       sectionTitle: 'Wählen Sie Ihre Stadt',
-      sectionDesc: 'Klicken Sie auf eine Stadt, um unser Zaunangebot in dieser Region zu sehen.',
+      sectionDesc: 'Klicken Sie auf Ihre Stadt und entdecken Sie unser umfassendes Angebot an Metallzäunen, Schiebetoren, Doppelflügeltoren, Pforten, Sichtschutzzäunen, Geländern und Zaunpaneelen. Wir bieten individuelle Lösungen, professionelle Montage, Automatisierung und Beratung für Ihr Grundstück in ganz Deutschland. Jetzt kostenloses Angebot anfordern!',
       regions: {
         mecklenburg: 'Mecklenburg-Vorpommern',
         brandenburg: 'Brandenburg',

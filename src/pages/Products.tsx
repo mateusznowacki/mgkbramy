@@ -8,8 +8,9 @@ const Products = () => {
   const { t, language } = useI18n();
   const products = [
     {
-      title: t('products', 'modernTitle'),
+      title: t('productCategories', 'modern'),
       description: t('products', 'modernDesc'),
+      image: '/modern.png',
       features: [
         t('products', 'modernFeature1'),
         t('products', 'modernFeature2'),
@@ -18,8 +19,9 @@ const Products = () => {
       ]
     },
     {
-      title: t('products', 'classicTitle'),
+      title: t('productCategories', 'classic'),
       description: t('products', 'classicDesc'),
+      image: '/classic.png',
       features: [
         t('products', 'classicFeature1'),
         t('products', 'classicFeature2'),
@@ -28,18 +30,9 @@ const Products = () => {
       ]
     },
     {
-      title: t('products', 'securityTitle'),
-      description: t('products', 'securityDesc'),
-      features: [
-        t('products', 'securityFeature1'),
-        t('products', 'securityFeature2'),
-        t('products', 'securityFeature3'),
-        t('products', 'securityFeature4'),
-      ]
-    },
-    {
-      title: t('products', 'decorativeTitle'),
+      title: t('productCategories', 'decorative'),
       description: t('products', 'decorativeDesc'),
+      image: '/balcony.png',
       features: [
         t('products', 'decorativeFeature1'),
         t('products', 'decorativeFeature2'),
@@ -48,8 +41,9 @@ const Products = () => {
       ]
     },
     {
-      title: t('products', 'privacyTitle'),
+      title: t('productCategories', 'privacy'),
       description: t('products', 'privacyDesc'),
+      image: '/private.png',
       features: [
         t('products', 'privacyFeature1'),
         t('products', 'privacyFeature2'),
@@ -58,14 +52,59 @@ const Products = () => {
       ]
     },
     {
-      title: t('products', 'railingsTitle'),
+      title: t('productCategories', 'slidingGate'),
+      description: t('products', 'slidingGateDesc'),
+      image: '/sliding-gate.png',
+      features: [
+        t('products', 'slidingGateFeature1') || 'Solidna konstrukcja',
+        t('products', 'slidingGateFeature2') || 'Automatyka Nice',
+        t('products', 'slidingGateFeature3') || 'Płynna praca',
+        t('products', 'slidingGateFeature4') || 'Bezpieczeństwo',
+      ],
+    },
+    {
+      title: t('productCategories', 'doubleSwingGate'),
+      description: t('products', 'doubleSwingGateDesc'),
+      image: '/double-leaf-gate.png',
+      features: [
+        t('products', 'doubleSwingGateFeature1') || 'Wytrzymałość',
+        t('products', 'doubleSwingGateFeature2') || 'Automatyka Nice',
+        t('products', 'doubleSwingGateFeature3') || 'Wygoda użytkowania',
+        t('products', 'doubleSwingGateFeature4') || 'Estetyka',
+      ],
+    },
+    {
+      title: t('productCategories', 'wicket'),
+      description: t('products', 'wicketDesc'),
+      image: '/wicket.png',
+      features: [
+        t('products', 'wicketFeature1') || 'Trwałość',
+        t('products', 'wicketFeature2') || 'Integracja z kontrolą dostępu',
+        t('products', 'wicketFeature3') || 'Estetyka',
+        t('products', 'wicketFeature4') || 'Bezpieczeństwo',
+      ],
+    },
+    {
+      title: t('productCategories', 'railings'),
       description: t('products', 'railingsDesc'),
+      image: '/balustrade.png',
       features: [
         t('products', 'railingsFeature1'),
         t('products', 'railingsFeature2'),
         t('products', 'railingsFeature3'),
         t('products', 'railingsFeature4'),
       ]
+    },
+    {
+      title: t('productCategories', 'panel'),
+      description: t('products', 'panelDesc') || '',
+      image: '/automatics.png',
+      features: [
+        t('products', 'panelFeature1') || 'Niezawodność',
+        t('products', 'panelFeature2') || 'Bezpieczeństwo',
+        t('products', 'panelFeature3') || 'Komfort użytkowania',
+        t('products', 'panelFeature4') || 'Nowoczesne technologie',
+      ],
     },
   ];
 
@@ -90,20 +129,29 @@ const Products = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-48 bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{product.title}</span>
+                <div className="h-48 w-full bg-slate-100 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-slate-900 mb-3">{product.title}</h3>
-                  <p className="text-gray-600 mb-4">{product.description}</p>
-                  <ul className="space-y-2">
-                    {product.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-600">
-                        <CheckCircle size={16} className="text-green-500 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Opis produktu */}
+                  {product.description && !['slidingGateDesc','doubleSwingGateDesc','wicketDesc','panelDesc'].includes(product.description) && product.description !== '' && (
+                    <p className="text-gray-600 mb-4">{product.description}</p>
+                  )}
+                  {product.features && product.features.length > 0 && (
+                    <ul className="space-y-2">
+                      {product.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-gray-600">
+                          <CheckCircle size={16} className="text-green-500 mr-2 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             ))}

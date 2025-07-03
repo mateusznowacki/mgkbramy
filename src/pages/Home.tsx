@@ -141,10 +141,8 @@ const Home = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <div className="bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{t('productCategories', 'classic')}</span>
-                </div>
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/classic.png" alt="Ogrodzenia klasyczne" className="object-cover w-full h-full" />
               </div>
               <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'classic')}
@@ -152,10 +150,8 @@ const Home = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <div className="bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{t('productCategories', 'decorative')}</span>
-                </div>
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/balcony.png" alt="Balkony francuskie" className="object-cover w-full h-full" />
               </div>
               <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'decorative')}
@@ -163,10 +159,8 @@ const Home = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <div className="bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{t('productCategories', 'privacy')}</span>
-                </div>
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/private.png" alt="Ogrodzenia zasłaniające" className="object-cover w-full h-full" />
               </div>
               <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'privacy')}
@@ -174,10 +168,8 @@ const Home = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <div className="bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{t('productCategories', 'slidingGate')}</span>
-                </div>
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/sliding-gate.png" alt="Bramy przesuwne" className="object-cover w-full h-full" />
               </div>
               <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'slidingGate')}
@@ -185,10 +177,8 @@ const Home = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <div className="bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{t('productCategories', 'doubleSwingGate')}</span>
-                </div>
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/double-leaf-gate.png" alt="Bramy dwuskrzydłowe" className="object-cover w-full h-full" />
               </div>
               <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'doubleSwingGate')}
@@ -196,10 +186,8 @@ const Home = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <div className="bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{t('productCategories', 'wicket')}</span>
-                </div>
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/wicket.png" alt="Furtki" className="object-cover w-full h-full" />
               </div>
               <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'wicket')}
@@ -207,10 +195,8 @@ const Home = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <div className="bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{t('productCategories', 'railings')}</span>
-                </div>
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/balustrade.png" alt="Balustrady i poręcze" className="object-cover w-full h-full" />
               </div>
               <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'railings')}
@@ -218,10 +204,8 @@ const Home = () => {
             </div>
 
             <div className="group cursor-pointer">
-              <div className="bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">{t('productCategories', 'panel')}</span>
-                </div>
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/automatics.png" alt="Automatyka bram" className="object-cover w-full h-full" />
               </div>
               <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'panel')}
