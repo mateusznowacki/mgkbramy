@@ -1,0 +1,141 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useI18n } from '@/lib/i18n';
+import { cities } from '@/data/cities';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
+const CitiesList: React.FC = () => {
+  const { language, t } = useI18n();
+  const isGerman = language === 'de';
+
+  const content = {
+    pl: {
+      title: 'Ogrodzenia w miastach Niemiec - MGK Metall Zäune',
+      heroTitle: 'Ogrodzenia w miastach Niemiec',
+      heroDesc: 'Oferujemy profesjonalne ogrodzenia metalowe w całych Niemczech. Nowoczesne i klasyczne ogrodzenia, bramy przesuwne, bramy dwuskrzydłowe. Darmowa wycena i montaż.',
+      sectionTitle: 'Wybierz swoje miasto',
+      sectionDesc: 'Kliknij na miasto, aby zobaczyć naszą ofertę ogrodzeń w tym regionie.',
+      regions: {
+        mecklenburg: 'Meklemburgia-Pomorze Przednie',
+        brandenburg: 'Brandenburgia',
+        berlin: 'Berlin',
+        sachsenAnhalt: 'Saksonia-Anhalt',
+        sachsen: 'Saksonia',
+        thuringen: 'Turyngia'
+      }
+    },
+    de: {
+      title: 'Zäune in deutschen Städten - MGK Metall Zäune',
+      heroTitle: 'Zäune in deutschen Städten',
+      heroDesc: 'Wir bieten professionelle Metallzäune in ganz Deutschland. Moderne und klassische Zäune, Schiebetore, Doppelflügeltore. Kostenloses Angebot und Montage.',
+      sectionTitle: 'Wählen Sie Ihre Stadt',
+      sectionDesc: 'Klicken Sie auf eine Stadt, um unser Zaunangebot in dieser Region zu sehen.',
+      regions: {
+        mecklenburg: 'Mecklenburg-Vorpommern',
+        brandenburg: 'Brandenburg',
+        berlin: 'Berlin',
+        sachsenAnhalt: 'Sachsen-Anhalt',
+        sachsen: 'Sachsen',
+        thuringen: 'Thüringen'
+      }
+    }
+  };
+
+  const currentContent = isGerman ? content.de : content.pl;
+
+  // Group cities by region
+  const cityGroups = {
+    mecklenburg: cities.slice(0, 8),
+    brandenburg: cities.slice(8, 13),
+    berlin: cities.slice(13, 18),
+    sachsenAnhalt: cities.slice(18, 29),
+    sachsen: cities.slice(29, 41),
+    thuringen: cities.slice(41, 52)
+  };
+
+  React.useEffect(() => {
+    document.title = currentContent.title;
+  }, [currentContent]);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 to-green-900 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl font-bold mb-6">{currentContent.heroTitle}</h1>
+          <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
+          <p className="text-xl max-w-3xl mx-auto text-gray-200">
+            {currentContent.heroDesc}
+          </p>
+        </div>
+      </section>
+
+      {/* Cities List Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-900 mb-4">{currentContent.sectionTitle}</h2>
+            <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {currentContent.sectionDesc}
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            {Object.entries(cityGroups).map(([regionKey, regionCities]) => (
+              <div key={regionKey} className="bg-gray-50 rounded-lg p-8">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">
+                  {currentContent.regions[regionKey as keyof typeof currentContent.regions]}
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                  {regionCities.map((city) => (
+                    <Link
+                      key={city.id}
+                      to={`/cities/${city.slug}`}
+                      className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all text-center group hover:scale-105"
+                    >
+                      <h4 className="font-semibold text-slate-900 group-hover:text-green-600 transition-colors mb-2">
+                        {isGerman ? city.nameDE : city.name}
+                      </h4>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-slate-900 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            {isGerman ? 'Bereit für einen neuen Zaun?' : 'Gotowy na nowe ogrodzenie?'}
+          </h2>
+          <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+            {isGerman 
+              ? 'Kontaktieren Sie uns für ein kostenloses Angebot. Wir realisieren Projekte in ganz Deutschland.'
+              : 'Skontaktuj się z nami po darmową wycenę. Realizujemy projekty w całych Niemczech.'
+            }
+          </p>
+          <Link 
+            to="/quote" 
+            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 inline-flex items-center group"
+          >
+            {t('header', 'quote')}
+            <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default CitiesList; 
