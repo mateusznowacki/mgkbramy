@@ -29,15 +29,12 @@ const Footer = () => {
           <div className="grid md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="bg-green-500 p-2 rounded">
-                  <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
-                    <span className="font-bold text-slate-900 text-lg">MGK</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-bold text-xl">{t('footer', 'company')}</h3>
-                </div>
+              <div className="flex items-center space-x-3 mb-4">
+                <img 
+                  src="/mgk-logo.png" 
+                  alt="MGK Metall Zäune Logo" 
+                  className="h-14 w-auto object-contain"
+                />
               </div>
               <p className="text-gray-300 mb-2" dangerouslySetInnerHTML={{ __html: t('footer', 'description') }} />
               <div className="flex space-x-4 mt-4">

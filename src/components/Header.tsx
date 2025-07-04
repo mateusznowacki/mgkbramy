@@ -17,15 +17,17 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 hover-scale group">
-            <div className="bg-green-500 p-2 rounded transition-all duration-300 group-hover:bg-green-400 group-hover:shadow-lg">
-              <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
-                <span className="font-bold text-slate-900 text-lg transition-transform duration-300 group-hover:scale-110">MGK</span>
-              </div>
+          <Link to="/" className="flex items-center space-x-3 hover-scale group">
+            <div className="transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+              <img 
+                src="/mgk-logo.png" 
+                alt="MGK Metall Zäune Logo" 
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <div className="transition-all duration-300 group-hover:translate-x-1">
               <h1 className="font-bold text-xl">MGK Metall Zäune</h1>
-              <p className="text-sm text-gray-300">Nowoczesne ogrodzenia i bramy</p>
+              <p className="text-sm text-gray-300">Moderne Zäune und Tore</p>
             </div>
           </Link>
 
