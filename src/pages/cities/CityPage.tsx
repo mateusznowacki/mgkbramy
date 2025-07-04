@@ -189,6 +189,39 @@ const CityPage: React.FC<CityPageProps> = ({ cityName, cityNameDE }) => {
         t('products', 'panelFeature4') || 'Nowoczesne technologie',
       ],
     },
+    {
+      title: 'Briefkastentor',
+      description: 'Zaunsystem mit integrierter Briefkastenanlage – modern, sicher und praktisch. Perfekt für Einfamilienhäuser und Wohnanlagen.',
+      image: '/mailbox.png',
+      features: [
+        'Integrierter Briefkasten',
+        'Pulverbeschichteter Stahl',
+        'Sichere Zustellung',
+        'Modernes Design',
+      ]
+    },
+    {
+      title: 'Schiebetor mit integrierter Pforte',
+      description: 'Schiebetor mit integrierter Pforte – platzsparend, komfortabel und sicher. Ideal für kleine Grundstücke und moderne Architektur.',
+      image: '/gate-integrated-wicket.png',
+      features: [
+        'Tor und Pforte in einem',
+        'Stabile Konstruktion',
+        'Komfortabler Zugang',
+        'Individuelle Maße',
+      ]
+    },
+    {
+      title: 'Metalltreppe',
+      description: 'Stabile und langlebige Metalltreppen für Innen- und Außenbereiche. Maßgefertigt, rutschfest und witterungsbeständig.',
+      image: '/metal-stairs.png',
+      features: [
+        'Maßanfertigung',
+        'Rutschfeste Stufen',
+        'Für Innen und Außen',
+        'Witterungsbeständig',
+      ]
+    },
   ];
 
   return (

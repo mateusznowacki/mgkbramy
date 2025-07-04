@@ -14,7 +14,7 @@ const translations = {
       modern: 'Moderne Zäune',
       classic: 'Klassische Zäune',
       decorative: 'Französische Balkone',
-      privacy: 'Sichtschutzzäune',
+      privacy: 'Doppelstabmatte Sichtschutzzäune',
       slidingGate: 'Schiebetore',
       doubleSwingGate: 'Doppelflügeltore',
       wicket: 'Pforten',

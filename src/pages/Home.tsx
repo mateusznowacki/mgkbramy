@@ -166,7 +166,7 @@ const Home = () => {
                 <img src="/private.png" alt="Ogrodzenia zasłaniające" className="object-cover w-full h-full" />
               </div>
               <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
-                {t('productCategories', 'privacy')}
+                Doppelstabmatte Sichtschutzzäune
               </Link>
             </div>
 
@@ -212,6 +212,33 @@ const Home = () => {
               </div>
               <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'panel')}
+              </Link>
+            </div>
+
+            <div className="group cursor-pointer">
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/mailbox.png" alt="Briefkastentor" className="object-cover w-full h-full" />
+              </div>
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+                Briefkastentor
+              </Link>
+            </div>
+
+            <div className="group cursor-pointer">
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/gate-integrated-wicket.png" alt="Schiebetor mit integrierter Pforte" className="object-cover w-full h-full" />
+              </div>
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+                Schiebetor mit integrierter Pforte
+              </Link>
+            </div>
+
+            <div className="group cursor-pointer">
+              <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
+                <img src="/metal-stairs.png" alt="Metalltreppe" className="object-cover w-full h-full" />
+              </div>
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+                Metalltreppe
               </Link>
             </div>
           </div>
