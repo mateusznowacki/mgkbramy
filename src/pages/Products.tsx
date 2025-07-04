@@ -110,7 +110,7 @@ const Products = () => {
       ],
     },
     {
-      title: 'Briefkastentor',
+      title: 'Briefkasten',
       description: 'Zaunsystem mit integrierter Briefkastenanlage – modern, sicher und praktisch. Perfekt für Einfamilienhäuser und Wohnanlagen.',
       image: '/mailbox.png',
       features: [

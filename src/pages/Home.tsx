@@ -217,10 +217,10 @@ const Home = () => {
 
             <div className="group cursor-pointer">
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
-                <img src="/mailbox.png" alt="Briefkastentor" className="object-cover w-full h-full" />
+                <img src="/mailbox.png" alt="Briefkasten" className="object-cover w-full h-full" />
               </div>
               <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
-                Briefkastentor
+                Briefkasten
               </Link>
             </div>
 

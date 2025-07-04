@@ -17,7 +17,7 @@ const CityPage: React.FC<CityPageProps> = ({ cityName, cityNameDE }) => {
     de: {
       title: `Zäune ${cityNameDE} - Moderne und Klassische | MGK Metall Zäune`,
       heroTitle: `Zäune ${cityNameDE}`,
-      heroDesc: `Professionelle Metallzäune in ${cityNameDE}. Moderne und klassische Zäune, Schiebetore, Doppelflügeltore. Kostenloses Angebot, Montage in ${cityNameDE}.`,
+      heroDesc: `Professionelle Metallzäune in ${cityNameDE}. Moderne und klassische Zäune, Schiebetore, Doppelflügeltore mit Nice- und Locinox-Automatisierung. Nice-Automatik aus Italien und Locinox aus der Schweiz sind weltweit führende Hersteller von Torautomatisierung. Kostenloses Angebot, Montage in ${cityNameDE}.`,
       modernTitle: `Moderne Zäune ${cityNameDE}`,
       modernDesc: `Moderne Metallzäune in ${cityNameDE} vereinen Funktionalität und Ästhetik. Wir bieten Zäune mit horizontalen Profilen, die sich perfekt in moderne Architektur einfügen. Unsere Zäune in ${cityNameDE} werden aus hochwertigem pulverbeschichtetem verzinktem Stahl gefertigt, was Langlebigkeit und Witterungsbeständigkeit garantiert.`,
       modernFeatures: [
@@ -39,7 +39,7 @@ const CityPage: React.FC<CityPageProps> = ({ cityName, cityNameDE }) => {
       ctaTitle: `Zaun in ${cityNameDE} bestellen`,
       ctaDesc: `Kontaktieren Sie uns für ein kostenloses Angebot für einen Zaun in ${cityNameDE}. Wir bieten umfassende Dienstleistungen: Planung, Produktion und Montage.`,
       seoTitle: `Zäune ${cityNameDE} - Moderne und Klassische Metallzäune`,
-      seoDesc: `Professionelle Metallzäune in ${cityNameDE}. Moderne Zäune mit horizontalen Profilen, klassische dekorative Zäune, Schiebetore, Doppelflügeltore. Kostenloses Angebot, Montage in ${cityNameDE}. MGK Metall Zäune - polnischer Hersteller mit 11 Jahren Erfahrung.`
+      seoDesc: `Professionelle Metallzäune in ${cityNameDE}. Moderne Zäune mit horizontalen Profilen, klassische dekorative Zäune, Schiebetore, Doppelflügeltore mit Nice- und Locinox-Automatisierung. Nice-Automatik aus Italien und Locinox aus der Schweiz sind weltweit führende Hersteller von Torautomatisierung. Kostenloses Angebot, Montage in ${cityNameDE}. MGK Metall Zäune - polnischer Hersteller mit 11 Jahren Erfahrung.`
     }
   };
 
@@ -190,7 +190,7 @@ const CityPage: React.FC<CityPageProps> = ({ cityName, cityNameDE }) => {
       ],
     },
     {
-      title: 'Briefkastentor',
+      title: 'Briefkasten',
       description: 'Zaunsystem mit integrierter Briefkastenanlage – modern, sicher und praktisch. Perfekt für Einfamilienhäuser und Wohnanlagen.',
       image: '/mailbox.png',
       features: [
