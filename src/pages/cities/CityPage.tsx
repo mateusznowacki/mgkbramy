@@ -11,37 +11,9 @@ interface CityPageProps {
 }
 
 const CityPage: React.FC<CityPageProps> = ({ cityName, cityNameDE }) => {
-  const { language, t } = useI18n();
-  const isGerman = language === 'de';
+  const { t } = useI18n();
 
   const content = {
-    pl: {
-      title: `Ogrodzenia ${cityName} - Nowoczesne i Klasyczne | MGK Metall Zäune`,
-      heroTitle: `Ogrodzenia ${cityName}`,
-      heroDesc: `Profesjonalne ogrodzenia metalowe w ${cityName}. Nowoczesne i klasyczne ogrodzenia, bramy przesuwne, bramy dwuskrzydłowe. Darmowa wycena, montaż na terenie ${cityName}.`,
-      modernTitle: `Nowoczesne ogrodzenia ${cityName}`,
-      modernDesc: `Nowoczesne ogrodzenia metalowe w ${cityName} to połączenie funkcjonalności i estetyki. Oferujemy ogrodzenia z poziomych profili, które doskonale komponują się z nowoczesną architekturą. Nasze ogrodzenia w ${cityName} wykonane są z wysokiej jakości stali ocynkowanej malowanej proszkowo, co zapewnia trwałość i odporność na warunki atmosferyczne.`,
-      modernFeatures: [
-        `Minimalistyczny design idealny dla ${cityName}`,
-        'Ocynk lub stalowa konstrukcja',
-        'Odporność na warunki pogodowe',
-        'Łatwe w utrzymaniu',
-        'Różne kolory i wzory'
-      ],
-      classicTitle: `Klasyczne ogrodzenia ${cityName}`,
-      classicDesc: `Klasyczne ogrodzenia w ${cityName} to tradycyjne rozwiązania łączące bezpieczeństwo z elegancją. Nasze klasyczne ogrodzenia w ${cityName} charakteryzują się ozdobnymi elementami i solidną konstrukcją. Wykonane z najlepszych materiałów, zapewniają długoletnią trwałość i estetyczny wygląd.`,
-      classicFeatures: [
-        `Tradycyjny styl pasujący do architektury ${cityName}`,
-        'Stalowa konstrukcja',
-        'Indywidualne wzory',
-        'Automatyka bram',
-        'Elementy dekoracyjne'
-      ],
-      ctaTitle: `Zamów ogrodzenie w ${cityName}`,
-      ctaDesc: `Skontaktuj się z nami, aby otrzymać darmową wycenę ogrodzenia w ${cityName}. Oferujemy kompleksowe usługi: projekt, produkcja i montaż.`,
-      seoTitle: `Ogrodzenia ${cityName} - Nowoczesne i Klasyczne Ogrodzenia Metalowe`,
-      seoDesc: `Profesjonalne ogrodzenia metalowe w ${cityName}. Nowoczesne ogrodzenia z poziomych profili, klasyczne ogrodzenia ozdobne, bramy przesuwne, bramy dwuskrzydłowe. Darmowa wycena, montaż na terenie ${cityName}. MGK Metall Zäune - polski producent z 11-letnim doświadczeniem.`
-    },
     de: {
       title: `Zäune ${cityNameDE} - Moderne und Klassische | MGK Metall Zäune`,
       heroTitle: `Zäune ${cityNameDE}`,
@@ -71,7 +43,7 @@ const CityPage: React.FC<CityPageProps> = ({ cityName, cityNameDE }) => {
     }
   };
 
-  const currentContent = isGerman ? content.de : content.pl;
+  const currentContent = content.de;
 
   React.useEffect(() => {
     document.title = currentContent.title;
@@ -359,13 +331,10 @@ const CityPage: React.FC<CityPageProps> = ({ cityName, cityNameDE }) => {
             {currentContent.ctaDesc}
           </p>
           <Link 
-            to="/quote" 
+            to="/angebot" 
             className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 inline-flex items-center group"
           >
-            {isGerman ? 'Kostenloses Angebot' : 'Darmowa wycena'}
-            <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            Kostenloses Angebot
           </Link>
         </div>
       </section>

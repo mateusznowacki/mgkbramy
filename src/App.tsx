@@ -12,6 +12,8 @@ import Quote from "./pages/Quote";
 import NotFound from "./pages/NotFound";
 import CityPageDynamic from "./pages/cities/CityPageDynamic";
 import CitiesList from "./pages/CitiesList";
+import Privacy from './pages/privacy';
+import Terms from './pages/terms';
 import React from "react";
 
 const queryClient = new QueryClient();
@@ -33,13 +35,15 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/quote" element={<Quote />} />
-          <Route path="/cities" element={<CitiesList />} />
-          <Route path="/cities/:citySlug" element={<CityPageDynamic />} />
+          <Route path="/ueber-uns" element={<About />} />
+          <Route path="/produkte" element={<Products />} />
+          <Route path="/galerie" element={<Gallery />} />
+          <Route path="/kontakt" element={<Contact />} />
+          <Route path="/angebot" element={<Quote />} />
+          <Route path="/zaeune" element={<CitiesList />} />
+          <Route path="/zaeune/:citySlug" element={<CityPageDynamic />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

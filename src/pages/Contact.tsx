@@ -5,7 +5,9 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { useI18n } from '../lib/i18n';
 
 const Contact = () => {
-  const { t } = useI18n();
+  const { t, setLanguage } = useI18n();
+  React.useEffect(() => { setLanguage('de'); }, [setLanguage]);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,7 +18,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Imię i nazwisko: ${formData.name}\nE-mail: ${formData.email}\nTelefon: ${formData.phone}\nTemat: ${formData.subject}\nWiadomość: ${formData.message}`;
+    const msg = `Name: ${formData.name}\nE-Mail: ${formData.email}\nTelefon: ${formData.phone}\nBetreff: ${formData.subject}\nNachricht: ${formData.message}`;
     const phone = '4917682184462';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
     window.open(url, '_blank');
@@ -155,7 +157,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">{t('contact', 'address')}</h3>
-                    <a href="https://maps.app.goo.gl/ugd36ig3xfosP8BM6" target="_blank" rel="noopener noreferrer" className="text-gray-600">Sitno 17/3, Polska</a>
+                    <a href="https://maps.app.goo.gl/ugd36ig3xfosP8BM6" target="_blank" rel="noopener noreferrer" className="text-gray-600">{t('footer', 'location')}</a>
                   </div>
                 </div>
               </div>

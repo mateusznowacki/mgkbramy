@@ -6,25 +6,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const CitiesList: React.FC = () => {
-  const { language, t } = useI18n();
-  const isGerman = language === 'de';
+  const { t } = useI18n();
 
   const content = {
-    pl: {
-      title: 'Ogrodzenia w miastach Niemiec - MGK Metall Zäune',
-      heroTitle: 'Ogrodzenia w miastach Niemiec',
-      heroDesc: 'Oferujemy profesjonalne ogrodzenia metalowe w całych Niemczech. Nowoczesne i klasyczne ogrodzenia, bramy przesuwne, bramy dwuskrzydłowe. Darmowa wycena i montaż.',
-      sectionTitle: 'Wybierz swoje miasto',
-      sectionDesc: 'Kliknij na miasto, aby zobaczyć naszą ofertę ogrodzeń w tym regionie.',
-      regions: {
-        mecklenburg: 'Meklemburgia-Pomorze Przednie',
-        brandenburg: 'Brandenburgia',
-        berlin: 'Berlin',
-        sachsenAnhalt: 'Saksonia-Anhalt',
-        sachsen: 'Saksonia',
-        thuringen: 'Turyngia'
-      }
-    },
     de: {
       title: 'Zäune in deutschen Städten - MGK Metall Zäune',
       heroTitle: 'Zäune in deutschen Städten',
@@ -32,27 +16,33 @@ const CitiesList: React.FC = () => {
       sectionTitle: 'Wählen Sie Ihre Stadt',
       sectionDesc: 'Klicken Sie auf Ihre Stadt und entdecken Sie unser umfassendes Angebot an Metallzäunen, Schiebetoren, Doppelflügeltoren, Pforten, Sichtschutzzäunen, Geländern und Zaunpaneelen. Wir bieten individuelle Lösungen, professionelle Montage, Automatisierung und Beratung für Ihr Grundstück in ganz Deutschland. Jetzt kostenloses Angebot anfordern!',
       regions: {
-        mecklenburg: 'Mecklenburg-Vorpommern',
-        brandenburg: 'Brandenburg',
+        baden: 'Baden-Württemberg',
+        bayern: 'Bayern',
         berlin: 'Berlin',
-        sachsenAnhalt: 'Sachsen-Anhalt',
+        brandenburg: 'Brandenburg',
+        bremen: 'Bremen',
+        hamburg: 'Hamburg',
+        hessen: 'Hessen',
+        mecklenburg: 'Mecklenburg-Vorpommern',
+        niedersachsen: 'Niedersachsen',
+        nrw: 'Nordrhein-Westfalen',
+        rheinland: 'Rheinland-Pfalz',
+        saarland: 'Saarland',
         sachsen: 'Sachsen',
+        sachsenAnhalt: 'Sachsen-Anhalt',
+        schleswig: 'Schleswig-Holstein',
         thuringen: 'Thüringen'
       }
     }
   };
 
-  const currentContent = isGerman ? content.de : content.pl;
+  const currentContent = content.de;
 
-  // Group cities by region
-  const cityGroups = {
-    mecklenburg: cities.slice(0, 8),
-    brandenburg: cities.slice(8, 13),
-    berlin: cities.slice(13, 18),
-    sachsenAnhalt: cities.slice(18, 29),
-    sachsen: cities.slice(29, 41),
-    thuringen: cities.slice(41, 52)
-  };
+  // Grupowanie miast po regionie
+  const cityGroups = Object.keys(currentContent.regions).reduce((acc, regionKey) => {
+    acc[regionKey] = cities.filter(city => city.region === regionKey);
+    return acc;
+  }, {} as Record<string, typeof cities>);
 
   React.useEffect(() => {
     document.title = currentContent.title;
@@ -94,11 +84,11 @@ const CitiesList: React.FC = () => {
                   {regionCities.map((city) => (
                     <Link
                       key={city.id}
-                      to={`/cities/${city.slug}`}
+                      to={`/zaeune/${city.slug}`}
                       className="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-all text-center group hover:scale-105"
                     >
                       <h4 className="font-semibold text-slate-900 group-hover:text-green-600 transition-colors mb-2">
-                        {isGerman ? city.nameDE : city.name}
+                        {city.nameDE}
                       </h4>
                     </Link>
                   ))}
@@ -113,16 +103,13 @@ const CitiesList: React.FC = () => {
       <section className="py-20 bg-slate-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            {isGerman ? 'Bereit für einen neuen Zaun?' : 'Gotowy na nowe ogrodzenie?'}
+            {t('header', 'quote')}
           </h2>
           <p className="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
-            {isGerman 
-              ? 'Kontaktieren Sie uns für ein kostenloses Angebot. Wir realisieren Projekte in ganz Deutschland.'
-              : 'Skontaktuj się z nami po darmową wycenę. Realizujemy projekty w całych Niemczech.'
-            }
+            {t('header', 'quoteDesc')}
           </p>
           <Link 
-            to="/quote" 
+            to="/angebot" 
             className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 inline-flex items-center group"
           >
             {t('header', 'quote')}

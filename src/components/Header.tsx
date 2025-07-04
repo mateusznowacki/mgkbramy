@@ -1,30 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Languages, ChevronDown } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu, X, Phone } from 'lucide-react';
 import { useI18n } from '../lib/i18n';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useI18n();
+  const { t, setLanguage } = useI18n();
+  React.useEffect(() => { setLanguage('de'); }, [setLanguage]);
+
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
-
-  const languages = [
-    { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  ];
-
-  const handleLanguageChange = (languageCode: string) => {
-    setLanguage(languageCode as 'pl' | 'de');
-    console.log(`Language changed to: ${languageCode}`);
-  };
 
   return (
     <header className="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
@@ -52,32 +38,32 @@ const Header = () => {
               {t('header', 'home')}
             </Link>
             <Link 
-              to="/about" 
-              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/about') ? 'text-green-400 scale-105' : ''}`}
+              to="/ueber-uns" 
+              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/ueber-uns') ? 'text-green-400 scale-105' : ''}`}
             >
               {t('header', 'about')}
             </Link>
             <Link 
-              to="/products" 
-              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/products') ? 'text-green-400 scale-105' : ''}`}
+              to="/produkte" 
+              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/produkte') ? 'text-green-400 scale-105' : ''}`}
             >
               {t('header', 'products')}
             </Link>
             <Link 
-              to="/gallery" 
-              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/gallery') ? 'text-green-400 scale-105' : ''}`}
+              to="/galerie" 
+              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/galerie') ? 'text-green-400 scale-105' : ''}`}
             >
-              {t('header', 'gallery')}
+              Galerie
             </Link>
             <Link 
-              to="/cities" 
-              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/cities') ? 'text-green-400 scale-105' : ''}`}
+              to="/zaeune" 
+              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/zaeune') ? 'text-green-400 scale-105' : ''}`}
             >
-              {language === 'de' ? 'Städte' : 'Miasta'}
+              Städte
             </Link>
             <Link 
-              to="/contact" 
-              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/contact') ? 'text-green-400 scale-105' : ''}`}
+              to="/kontakt" 
+              className={`story-link transition-all duration-300 hover:text-green-400 hover:scale-105 ${isActive('/kontakt') ? 'text-green-400 scale-105' : ''}`}
             >
               {t('header', 'contact')}
             </Link>
@@ -90,29 +76,8 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Language Switcher */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 hover:text-green-400 transition-all duration-300 hover:scale-105 focus:outline-none">
-                <Languages size={16} />
-                <span>{language}</span>
-                <ChevronDown size={12} className="transition-transform duration-200 group-data-[state=open]:rotate-180" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-slate-800 border-slate-700">
-                {languages.map((lang) => (
-                  <DropdownMenuItem
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className="text-white hover:bg-slate-700 hover:text-green-400 transition-all duration-200 cursor-pointer"
-                  >
-                    <span className="mr-2">{lang.flag}</span>
-                    <span>{lang.name}</span>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
             <Link 
-              to="/quote" 
+              to="/angebot" 
               className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
             >
               {t('header', 'quote')}
@@ -140,66 +105,43 @@ const Header = () => {
                 {t('header', 'home')}
               </Link>
               <Link 
-                to="/about" 
+                to="/ueber-uns" 
                 className="hover:text-green-400 transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('header', 'about')}
               </Link>
               <Link 
-                to="/products" 
+                to="/produkte" 
                 className="hover:text-green-400 transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('header', 'products')}
               </Link>
               <Link 
-                to="/gallery" 
+                to="/galerie" 
                 className="hover:text-green-400 transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('header', 'gallery')}
+                Galerie
               </Link>
               <Link 
-                to="/cities" 
+                to="/zaeune" 
                 className="hover:text-green-400 transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {language === 'de' ? 'Städte' : 'Miasta'}
+                Städte
               </Link>
               <Link 
-                to="/contact" 
+                to="/kontakt" 
                 className="hover:text-green-400 transition-all duration-300 hover:translate-x-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('header', 'contact')}
               </Link>
               
-              {/* Mobile Language Switcher */}
-              <div className="pt-2 border-t border-slate-700">
-                <p className="text-sm text-gray-400 mb-2">Language</p>
-                <div className="flex space-x-2">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        handleLanguageChange(lang.code);
-                        setIsMenuOpen(false);
-                      }}
-                      className={`px-3 py-1 rounded transition-all duration-300 hover:scale-105 ${
-                        language === lang.code
-                          ? 'bg-green-500 text-white'
-                          : 'bg-slate-700 text-gray-300 hover:bg-slate-600'
-                      }`}
-                    >
-                      {lang.flag} {lang.code}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              
               <Link 
-                to="/quote" 
+                to="/angebot" 
                 className="bg-green-500 hover:bg-green-600 px-6 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block text-center hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -67,11 +66,12 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ project, isOpen, onClos
         {/* Main Image */}
         <div className="relative h-full flex items-center justify-center pt-20 pb-16">
           <div className="relative max-w-4xl max-h-full">
-            <div className="bg-gradient-to-br from-slate-600 to-slate-800 rounded-lg overflow-hidden">
-              <div className="aspect-video w-full max-w-4xl bg-gradient-to-br from-slate-500 to-slate-700 flex items-center justify-center text-white text-xl">
-                Project Image {currentImageIndex + 1}
-              </div>
-            </div>
+            <img
+              src={project.images[currentImageIndex]}
+              alt={project.title}
+              className="aspect-video w-full max-w-4xl object-contain rounded-2xl"
+              style={{ maxHeight: '70vh' }}
+            />
             
             {/* Navigation Arrows */}
             {project.images.length > 1 && (
@@ -114,7 +114,7 @@ const ProjectGallery: React.FC<ProjectGalleryProps> = ({ project, isOpen, onClos
               ))}
             </div>
             <div className="text-center text-white mt-2 text-sm">
-              {currentImageIndex + 1} of {project.images.length}
+              {currentImageIndex + 1} von {project.images.length}
             </div>
           </div>
         )}

@@ -54,12 +54,15 @@ const Footer = () => {
             <div>
               <h4 className="font-semibold text-lg mb-4 text-green-400">{t('footer', 'products')}</h4>
               <ul className="space-y-2 text-gray-300">
-                <li><a href="/products" className="hover:text-white transition-colors">{t('productCategories', 'modern')}</a></li>
-                <li><a href="/products" className="hover:text-white transition-colors">{t('productCategories', 'classic')}</a></li>
-                <li><a href="/products" className="hover:text-white transition-colors">{t('productCategories', 'decorative')}</a></li>
-                <li><a href="/products" className="hover:text-white transition-colors">{t('productCategories', 'wrought')}</a></li>
-                <li><a href="/products" className="hover:text-white transition-colors">{t('productCategories', 'railings')}</a></li>
-                <li><a href="/products" className="hover:text-white transition-colors">{t('productCategories', 'panel')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'modern')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'classic')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'decorative')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'privacy')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'slidingGate')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'doubleSwingGate')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'wicket')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'railings')}</a></li>
+                <li><a href="/produkte" className="hover:text-white transition-colors">{t('productCategories', 'panel')}</a></li>
               </ul>
             </div>
 
@@ -68,10 +71,10 @@ const Footer = () => {
               <h4 className="font-semibold text-lg mb-4 text-green-400">{t('footer', 'quickLinks')}</h4>
               <ul className="space-y-2 text-gray-300">
                 <li><a href="/" className="hover:text-white transition-colors">{t('footer', 'home')}</a></li>
-                <li><a href="/about" className="hover:text-white transition-colors">{t('footer', 'about')}</a></li>
-                <li><a href="/gallery" className="hover:text-white transition-colors">{t('footer', 'gallery')}</a></li>
-                <li><a href="/contact" className="hover:text-white transition-colors">{t('footer', 'contactPage')}</a></li>
-                <li><a href="/quote" className="hover:text-white transition-colors">{t('footer', 'quote')}</a></li>
+                <li><a href="/ueber-uns" className="hover:text-white transition-colors">{t('footer', 'about')}</a></li>
+                <li><a href="/galerie" className="hover:text-white transition-colors">{t('footer', 'gallery')}</a></li>
+                <li><a href="/kontakt" className="hover:text-white transition-colors">{t('footer', 'contactPage')}</a></li>
+                <li><a href="/angebot" className="hover:text-white transition-colors">{t('footer', 'quote')}</a></li>
               </ul>
             </div>
 

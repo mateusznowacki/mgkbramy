@@ -5,7 +5,10 @@ import { CheckCircle } from 'lucide-react';
 import { useI18n } from '../lib/i18n';
 
 const Products = () => {
-  const { t, language } = useI18n();
+  // Ustawiamy język na stałe na 'de'
+  const { t, setLanguage } = useI18n();
+  React.useEffect(() => { setLanguage('de'); }, [setLanguage]);
+
   const products = [
     {
       title: t('productCategories', 'modern'),
@@ -56,10 +59,10 @@ const Products = () => {
       description: t('products', 'slidingGateDesc'),
       image: '/sliding-gate.png',
       features: [
-        t('products', 'slidingGateFeature1') || 'Solidna konstrukcja',
-        t('products', 'slidingGateFeature2') || 'Automatyka Nice',
-        t('products', 'slidingGateFeature3') || 'Płynna praca',
-        t('products', 'slidingGateFeature4') || 'Bezpieczeństwo',
+        t('products', 'slidingGateFeature1'),
+        t('products', 'slidingGateFeature2'),
+        t('products', 'slidingGateFeature3'),
+        t('products', 'slidingGateFeature4'),
       ],
     },
     {
@@ -67,10 +70,10 @@ const Products = () => {
       description: t('products', 'doubleSwingGateDesc'),
       image: '/double-leaf-gate.png',
       features: [
-        t('products', 'doubleSwingGateFeature1') || 'Wytrzymałość',
-        t('products', 'doubleSwingGateFeature2') || 'Automatyka Nice',
-        t('products', 'doubleSwingGateFeature3') || 'Wygoda użytkowania',
-        t('products', 'doubleSwingGateFeature4') || 'Estetyka',
+        t('products', 'doubleSwingGateFeature1'),
+        t('products', 'doubleSwingGateFeature2'),
+        t('products', 'doubleSwingGateFeature3'),
+        t('products', 'doubleSwingGateFeature4'),
       ],
     },
     {
@@ -78,10 +81,10 @@ const Products = () => {
       description: t('products', 'wicketDesc'),
       image: '/wicket.png',
       features: [
-        t('products', 'wicketFeature1') || 'Trwałość',
-        t('products', 'wicketFeature2') || 'Integracja z kontrolą dostępu',
-        t('products', 'wicketFeature3') || 'Estetyka',
-        t('products', 'wicketFeature4') || 'Bezpieczeństwo',
+        t('products', 'wicketFeature1'),
+        t('products', 'wicketFeature2'),
+        t('products', 'wicketFeature3'),
+        t('products', 'wicketFeature4'),
       ],
     },
     {
@@ -97,13 +100,13 @@ const Products = () => {
     },
     {
       title: t('productCategories', 'panel'),
-      description: t('products', 'panelDesc') || '',
+      description: t('products', 'panelDesc'),
       image: '/automatics.png',
       features: [
-        t('products', 'panelFeature1') || 'Niezawodność',
-        t('products', 'panelFeature2') || 'Bezpieczeństwo',
-        t('products', 'panelFeature3') || 'Komfort użytkowania',
-        t('products', 'panelFeature4') || 'Nowoczesne technologie',
+        t('products', 'panelFeature1'),
+        t('products', 'panelFeature2'),
+        t('products', 'panelFeature3'),
+        t('products', 'panelFeature4'),
       ],
     },
   ];

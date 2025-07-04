@@ -8,6 +8,9 @@ import { useI18n } from '../lib/i18n';
 
 const Home = () => {
   const { t } = useI18n();
+  React.useEffect(() => {
+    document.title = 'MGK Metall Zäune aus Polen';
+  }, []);
   return (
     <div className="min-h-screen">
       <Header />
@@ -34,14 +37,14 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
-                to="/quote" 
+                to="/angebot" 
                 className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 flex items-center justify-center group"
               >
                 {t('home', 'getQuote')}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
-                to="/gallery" 
+                to="/galerie" 
                 className="border-2 border-white hover:bg-white hover:text-slate-900 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all flex items-center justify-center"
               >
                 {t('home', 'viewGallery')}
@@ -55,7 +58,7 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">{t('home', 'aboutTitle')}</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Über MGK Metall Zäune</h2>
             <div className="w-24 h-1 bg-green-500 mx-auto mb-8"></div>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               {t('home', 'aboutDesc1')}
@@ -64,7 +67,7 @@ const Home = () => {
               {t('home', 'aboutDesc2')}
             </p>
             <Link 
-              to="/about" 
+              to="/ueber-uns" 
               className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all inline-flex items-center group"
             >
               {t('home', 'learnMore')}
@@ -135,7 +138,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/modern.png" alt="Ogrodzenia nowoczesne" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'modern')}
               </Link>
             </div>
@@ -144,7 +147,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/classic.png" alt="Ogrodzenia klasyczne" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'classic')}
               </Link>
             </div>
@@ -153,7 +156,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/balcony.png" alt="Balkony francuskie" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'decorative')}
               </Link>
             </div>
@@ -162,7 +165,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/private.png" alt="Ogrodzenia zasłaniające" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'privacy')}
               </Link>
             </div>
@@ -171,7 +174,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/sliding-gate.png" alt="Bramy przesuwne" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'slidingGate')}
               </Link>
             </div>
@@ -180,7 +183,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/double-leaf-gate.png" alt="Bramy dwuskrzydłowe" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'doubleSwingGate')}
               </Link>
             </div>
@@ -189,7 +192,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/wicket.png" alt="Furtki" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'wicket')}
               </Link>
             </div>
@@ -198,7 +201,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/balustrade.png" alt="Balustrady i poręcze" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'railings')}
               </Link>
             </div>
@@ -207,7 +210,7 @@ const Home = () => {
               <div className="relative bg-gray-200 h-64 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                 <img src="/automatics.png" alt="Automatyka bram" className="object-cover w-full h-full" />
               </div>
-              <Link to="/products" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
+              <Link to="/produkte" className="bg-green-500 text-white px-6 py-3 rounded-full inline-block hover:bg-green-600 transition-colors">
                 {t('productCategories', 'panel')}
               </Link>
             </div>
@@ -277,7 +280,7 @@ const Home = () => {
             {t('home', 'readyFenceDesc')}
           </p>
           <Link 
-            to="/quote" 
+            to="/angebot" 
             className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all hover:scale-105 inline-flex items-center group"
           >
             {t('home', 'getQuote')}
