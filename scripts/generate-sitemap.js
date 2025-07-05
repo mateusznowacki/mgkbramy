@@ -6,7 +6,7 @@ const path = require('path');
 const { cities } = require('../src/data/cities');
 const { realizations } = require('../src/data/realizations');
 
-const BASE_URL = 'https://mgkmatallzaune.de/';
+const BASE_URL = 'https://mgkmatallzaune.de';
 
 // Statyczne podstrony
 const staticPages = [

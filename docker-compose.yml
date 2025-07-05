@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    image: mgkmetallzaune:latest
+    restart: unless-stopped
+    expose:
+      - "443"
+    volumes:
+      - /etc/ssl/cloudflare:/etc/ssl/cloudflare:ro
+    networks:
+      - internal
+
+networks:
+  internal: {}

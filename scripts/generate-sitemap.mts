@@ -4,7 +4,7 @@ import path from 'path';
 import { cities } from '../src/data/cities';
 import { realizations } from '../src/data/realizations';
 
-const BASE_URL = 'https://mgkmatallzaune.de/';
+const BASE_URL = 'https://mgkmatallzaune.de';
 
 const staticPages = [
   '/',
