@@ -5,8 +5,8 @@ services:
     build: .
     image: mgkmetallzaune:latest
     restart: unless-stopped
-    expose:
-      - "443"
+    ports:
+      - "443:443"
     volumes:
       - /etc/ssl/cloudflare:/etc/ssl/cloudflare:ro
     networks:
