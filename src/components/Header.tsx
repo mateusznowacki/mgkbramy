@@ -72,10 +72,10 @@ const Header = () => {
             
             {/* Contact Info */}
             <div className="hidden lg:flex items-center space-x-4 text-sm">
-              <div className="flex items-center space-x-1 transition-all duration-300 hover:text-green-400 hover:scale-105">
+              <a href="tel:+4917682184462" className="flex items-center space-x-1 transition-all duration-300 hover:text-green-400 hover:scale-105">
                 <Phone size={16} className="animate-pulse" />
                 <span>+49 176 82184462</span>
-              </div>
+              </a>
             </div>
 
             <Link 
@@ -142,6 +142,15 @@ const Header = () => {
                 {t('header', 'contact')}
               </Link>
               
+              <a 
+                href="tel:+4917682184462"
+                className="flex items-center space-x-2 text-green-500 font-semibold hover:text-green-600 transition-all duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Phone size={18} />
+                <span>+49 176 82184462</span>
+              </a>
+
               <Link 
                 to="/angebot" 
                 className="bg-green-500 hover:bg-green-600 px-6 py-4 rounded-full text-lg font-semibold transition-all duration-300 inline-block text-center hover:scale-105"
